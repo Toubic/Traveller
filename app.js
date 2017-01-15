@@ -183,6 +183,54 @@ app.post("/", function(req, res) {
     res.redirect("/");
 });
 
+app.get("/firstquery", function(req, res) {
+
+    Database.query('SELECT count("VisitedCountries".country) AS countries_total FROM "VisitedCountries"', { type: Database.QueryTypes.SELECT})
+        .then(function(queries) {
+            res.render("firstquery", {
+                query: queries
+            });
+        });
+
+
+});
+
+app.get("/secondquery", function(req, res) {
+
+    Database.query('SELECT C1.creator AS creatorone, C1.city AS city, C2.creator AS creatortwo FROM "VisitedCities" C1, "VisitedCities" C2 WHERE C1.city = C2.city and C1.creator < C2.creator GROUP BY C1.creator, C1.city, C2.creator', { type: Database.QueryTypes.SELECT})
+        .then(function(queries) {
+            res.render("secondquery", {
+                query: queries
+            });
+        });
+
+
+});
+
+app.get("/thirdquery", function(req, res) {
+
+    Database.query('SELECT C1.creator AS creator, C1.city AS city, CASE WHEN count(C1.city) = 1 THEN \'Yes\' ELSE \'No\' END AS visited FROM "VisitedCities" C1 WHERE C1.creator = \'Tobbe\' and C1.city = \'Gothenburg\' GROUP BY C1.creator, C1.city', { type: Database.QueryTypes.SELECT})
+        .then(function(queries) {
+            res.render("thirdquery", {
+                query: queries
+            });
+        });
+
+
+});
+
+app.get("/fourthquery", function(req, res) {
+
+    Database.query('SELECT C1.creator, CASE WHEN count(C1.continent) = 7 THEN \'Yes\' ELSE \'No\' END AS visited_all_continents FROM "VisitedContinents" C1 GROUP BY C1.creator', { type: Database.QueryTypes.SELECT})
+        .then(function(queries) {
+            res.render("fourthquery", {
+                query: queries
+            });
+        });
+
+
+});
+
 app.get("/continents", function(req, res) {
     VisitedCountries.all().then(function (entries) {
         res.render("continents", {

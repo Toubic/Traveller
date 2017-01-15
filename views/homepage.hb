@@ -23,6 +23,19 @@
         <br>
         <input type="submit" value="Add">
         <br>
+        <a href="/firstquery" >First query</a>
+        <br>
+        <br>
+        <a href="/secondquery" >Second query</a>
+        <br>
+        <br>
+        <a href="/thirdquery" >Third query</a>
+        <br>
+        <br>
+        <a href="/fourthquery" >Fourth query</a>
+        <br>
+        <h2>Fifth query:</h2>
+        <br>
         <a href="/continents" >Show all visited continents</a>
         <br>
         <a href="/countries" >Show all visited countries</a>
