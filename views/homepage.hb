@@ -4,26 +4,29 @@
 <br>
 <form action="" method="post">
         <br>
-        <h2>Creator:</h2>
+        <h2>Traveller nickname:</h2>
         <input type="text" name="creator" required>
         <br>
-        <h2>Continent:</h2>
+        <h2>Visited continent:</h2>
         <input type="text" name="continent" required>
         <br>
-        <h2>Country:</h2>
+        <h2>Visited country:</h2>
         <input type="text" name="country" required>
         <br>
-        <h2>City (Optional):</h2>
+        <h2>Visited city (Optional):</h2>
         <input type="text" name="city">
         <br>
-        <h2>Year:</h2>
+        <h2>Year for visit (ex. 2016):</h2>
         <input type="text" name="year" required>
         <br>
         <br>
         <br>
         <input type="submit" value="Add">
         <br>
+        <a href="/continents" >Show all visited continents</a>
         <br>
+        <a href="/countries" >Show all visited countries</a>
         <br>
-        <a href="/register" >Show all travellers</a>
+        <a href="/cities" >Show all visited cities</a>
+        <br>
 </form>

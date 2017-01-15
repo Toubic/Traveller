@@ -20,9 +20,9 @@ app.set("view engine", "hb");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const THE_DATABASE = "postgres";
-const THE_USERNAME = "postgres";
-const THE_PASSWORD = "tj22fe";
+const THE_DATABASE = "dfamvr9489el11";
+const THE_USERNAME = "bkmuesonvzihku";
+const THE_PASSWORD = "SQ9eCnS1Y0UqO9t0qZ0clDO4nn";
 
 
 exports.createPostgresDatabase = function (theDatabase, theUsername, thePassword) {
@@ -43,7 +43,13 @@ exports.createPostgresDatabase = function (theDatabase, theUsername, thePassword
                 dialect: 'postgres',
                 protocol: 'postgres',
                 port: 5432,
-                host: 'localhost'
+                host: 'ec2-54-75-228-51.eu-west-1.compute.amazonaws.com',
+                ssl: true,
+                dialectOptions:{
+                    ssl:{
+                        "require":true
+                    }
+                }
             });
         }
     }
@@ -175,6 +181,30 @@ app.post("/", function(req, res) {
         });
     }
     res.redirect("/");
+});
+
+app.get("/continents", function(req, res) {
+    VisitedCountries.all().then(function (entries) {
+        res.render("continents", {
+            entry: entries
+        });
+    });
+});
+
+app.get("/countries", function(req, res) {
+    VisitedCountries.all().then(function (entries) {
+        res.render("countries", {
+            entry: entries
+        });
+    });
+});
+
+app.get("/cities", function(req, res) {
+    VisitedCities.all().then(function (entries) {
+        res.render("cities", {
+            entry: entries
+        });
+    });
 });
 
 app.get("/css/style.css", function(req, res) {
