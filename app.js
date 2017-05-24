@@ -8,6 +8,7 @@ var exhand = require("express-handlebars");
 var Storage = require("fs-storage");
 var storage = new Storage("./storage/");
 var app = express();
+var config = require("./config/config");
 
 
 app.listen(process.env.PORT || 5000);
@@ -20,9 +21,9 @@ app.set("view engine", "hb");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const THE_DATABASE = "dfamvr9489el11";
-const THE_USERNAME = "bkmuesonvzihku";
-const THE_PASSWORD = "SQ9eCnS1Y0UqO9t0qZ0clDO4nn";
+const THE_DATABASE = config.database.database;
+const THE_USERNAME = config.database.username;
+const THE_PASSWORD = config.database.password;
 
 
 exports.createPostgresDatabase = function (theDatabase, theUsername, thePassword) {
@@ -43,7 +44,7 @@ exports.createPostgresDatabase = function (theDatabase, theUsername, thePassword
                 dialect: 'postgres',
                 protocol: 'postgres',
                 port: 5432,
-                host: 'ec2-54-75-228-51.eu-west-1.compute.amazonaws.com',
+                host: config.database.host,
                 ssl: true,
                 dialectOptions:{
                     ssl:{
