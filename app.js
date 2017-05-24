@@ -44,7 +44,7 @@ exports.createPostgresDatabase = function (theDatabase, theUsername, thePassword
                 dialect: 'postgres',
                 protocol: 'postgres',
                 port: 5432,
-                host: config.database.host,
+                host: 'ec2-79-125-6-82.eu-west-1.compute.amazonaws.com',
                 ssl: true,
                 dialectOptions:{
                     ssl:{
@@ -135,7 +135,6 @@ var VisitedCities = Database.define('VisitedCities', {
 
 VisitedCities.removeAttribute('id');
 
-/*
 
 Lists.sync({force: true});
 
@@ -145,7 +144,6 @@ VisitedCountries.sync({force: true});
 
  VisitedCities.sync({force: true});
 
-*/
 
 Database.sync();
 
