@@ -135,6 +135,7 @@ var VisitedCities = Database.define('VisitedCities', {
 
 VisitedCities.removeAttribute('id');
 
+/*
 
 Lists.sync({force: true});
 
@@ -142,7 +143,9 @@ VisitedContinents.sync({force: true});
 
 VisitedCountries.sync({force: true});
 
- VisitedCities.sync({force: true});
+VisitedCities.sync({force: true});
+
+*/
 
 
 Database.sync();
