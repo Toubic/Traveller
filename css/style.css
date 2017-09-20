@@ -47,3 +47,7 @@ h2, a {
 a:hover {
     color: black;
 }
+
+.left {
+    float: left;
+}
