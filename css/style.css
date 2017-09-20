@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 h1 {
     color: white;
     width: 100%;
@@ -13,17 +18,13 @@ body {
     background-repeat: no-repeat;
     background-position-x: center;
     background-size: cover;
-}
-
-form {
+    margin: 0 auto;
     text-align: center;
 }
 
 form input {
     color: white;
-    text-align: center;
     border-radius: 10px;
-    width: 40%;
     font-size: 24px;
     padding: 10px;
     background-color: black;
@@ -33,4 +34,16 @@ h2, a {
     color: white;
     font-weight: bolder;
     font-size: x-large;
+}
+
+#queries li {
+    display: inline-block;
+    border: 5px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 5px;
+}
+
+a:hover {
+    color: black;
 }

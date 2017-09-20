@@ -4,6 +4,7 @@
 <br>
 <form action="" method="post">
         <br>
+        <div>
         <h2>Traveller nickname:</h2>
         <input type="text" name="creator" required>
         <br>
@@ -22,24 +23,23 @@
         <br>
         <br>
         <input type="submit" value="Add">
-        <br>
-        <a href="/firstquery" >First query</a>
-        <br>
-        <br>
-        <a href="/secondquery" >Second query</a>
+        </div>
         <br>
         <br>
-        <a href="/thirdquery" >Third query</a>
-        <br>
-        <br>
-        <a href="/fourthquery" >Fourth query</a>
-        <br>
-        <h2>Fifth query:</h2>
-        <br>
-        <a href="/continents" >Show all visited continents</a>
-        <br>
-        <a href="/countries" >Show all visited countries</a>
-        <br>
-        <a href="/cities" >Show all visited cities</a>
+        <ul id="queries">
+            <li><a href="/firstquery" >First query</a></li>
+            <li><a href="/secondquery" >Second query</a></li>
+            <li><a href="/thirdquery" >Third query</a></li>
+            <li><a href="/fourthquery" >Fourth query</a></li>
+            <br>
+            <br>
+            <h2>Fifth query:</h2>
+            <br>
+            <ul>
+                <li><a href="/continents" >Show all visited continents</a></li>
+                <li><a href="/countries" >Show all visited countries</a></li>
+                <li><a href="/cities" >Show all visited cities</a></li>
+            </ul>
+        </ul>
         <br>
 </form>
