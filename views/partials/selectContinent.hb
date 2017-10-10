@@ -1,4 +1,4 @@
- <select>
+ <select required>
 
   <option value="" disabled selected>Select a continent</option>
 
