@@ -1,5 +1,7 @@
  <select>
 
+  <option value="" disabled selected>Select a country</option>
+
   <!-- A -->
 
   <option value="Afghanistan">Afghanistan</option>

@@ -1,4 +1,7 @@
  <select>
+
+  <option value="" disabled selected>Select a continent</option>
+
   <option value="Africa">Africa</option>
   <option value="Antarctica">Antarctica</option>
   <option value="Asia">Asia</option>
