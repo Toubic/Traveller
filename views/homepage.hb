@@ -12,7 +12,7 @@
         {{> selectContinent }}
         <br>
         <h2>Visited country:</h2>
-        <input type="text" name="country" required>
+        {{> selectCountry }}
         <br>
         <h2>Visited city (Optional):</h2>
         <input type="text" name="city">
