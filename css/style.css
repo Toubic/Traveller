@@ -22,7 +22,7 @@ body {
     text-align: center;
 }
 
-form input {
+form input, select{
     color: white;
     border-radius: 10px;
     font-size: 24px;

@@ -9,7 +9,7 @@
         <input type="text" name="creator" required>
         <br>
         <h2>Visited continent:</h2>
-        <input type="text" name="continent" required>
+        {{> selectContinent }}
         <br>
         <h2>Visited country:</h2>
         <input type="text" name="country" required>
