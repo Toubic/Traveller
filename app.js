@@ -147,7 +147,6 @@ VisitedCities.sync({force: true});
 
 */
 
-
 Database.sync();
 
 app.get("/", function(req, res) {

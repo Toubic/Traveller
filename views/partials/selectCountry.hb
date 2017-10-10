@@ -1,4 +1,4 @@
- <select required>
+ <select name="country" required>
 
   <option value="" disabled selected>Select a country</option>
 
