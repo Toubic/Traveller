@@ -17,8 +17,8 @@
         <h2>Visited city (Optional):</h2>
         <input type="text" name="city">
         <br>
-        <h2>Year for visit (ex. 2016):</h2>
-        <input type="text" name="year" required>
+        <h2>Year for visit:</h2>
+        {{> selectYear }}
         <br>
         <br>
         <br>
