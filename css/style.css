@@ -28,9 +28,6 @@ form input, select{
     font-size: 24px;
     padding: 10px;
     background-color: black;
-}
-
-select {
     text-align: center;
 }
 
