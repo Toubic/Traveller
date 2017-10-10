@@ -1,1 +1,3 @@
-# A Toubic-project
+# Traveller
+
+SQL project assignment in the course database theory
