@@ -13,6 +13,10 @@ h1 {
     text-shadow: 5px 5px 5px black;
 }
 
+h1, h2, input, ul {
+    margin-top: 20px;
+}
+
 body {
     background-image: url(https://images.pexels.com/photos/21014/pexels-photo.jpg?w=1260&h=750&auto=compress&cs=tinysrgb);
     background-repeat: no-repeat;
