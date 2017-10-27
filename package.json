@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Toubic/Traveller.git#readme",
   "dependencies": {
     "body-parser": "^1.15.1",
+    "dotenv": "^4.0.0",
     "express": "^4.13.4",
     "express-handlebars": "^3.0.0",
     "fs-storage": "0.0.2",

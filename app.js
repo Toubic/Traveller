@@ -1,5 +1,6 @@
 "use strict";
 
+var dotenv = require("dotenv");
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
@@ -8,8 +9,8 @@ var exhand = require("express-handlebars");
 var Storage = require("fs-storage");
 var storage = new Storage("./storage/");
 var app = express();
-var config = require("./config/config");
 
+dotenv.config();
 
 app.listen(process.env.PORT || 5000);
 
@@ -21,11 +22,6 @@ app.set("view engine", "hb");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const THE_DATABASE = config.database.database;
-const THE_USERNAME = config.database.username;
-const THE_PASSWORD = config.database.password;
-
-
 exports.createPostgresDatabase = function (theDatabase, theUsername, thePassword) {
 
     try {
@@ -36,7 +32,7 @@ exports.createPostgresDatabase = function (theDatabase, theUsername, thePassword
         else if (theDatabase === undefined || theUsername === undefined || thePassword === undefined){
             throw new Error("No database info given");
         }
-        else if (theDatabase !== THE_DATABASE || theUsername !== THE_USERNAME || thePassword !== THE_PASSWORD){
+        else if (theDatabase !== process.env.DATABASE || theUsername !== process.env.DATABASE_USERNAME || thePassword !== process.env.DATABASE_PASSWORD){
             throw new Error ("Incorrect database name/username/password");
         }
         else {
@@ -60,7 +56,8 @@ exports.createPostgresDatabase = function (theDatabase, theUsername, thePassword
 
     return Database;
 };
-var Database = exports.createPostgresDatabase(THE_DATABASE, THE_USERNAME, THE_PASSWORD);
+
+var Database = exports.createPostgresDatabase(process.env.DATABASE, process.env.DATABASE_USERNAME, process.env.DATABASE_PASSWORD);
 
 var Lists = Database.define('Lists', {
     creator: {
